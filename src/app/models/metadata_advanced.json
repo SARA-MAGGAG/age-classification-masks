@@ -1,0 +1,32 @@
+{
+  "model": {
+    "name": "ResNet50_Advanced_AntiOverfitting",
+    "architecture": "ResNet50 + Custom Head",
+    "input_size": [
+      224,
+      224
+    ],
+    "num_classes": 3,
+    "total_params": 24114051
+  },
+  "training": {
+    "initial_learning_rate": 0.0001,
+    "batch_size": 32,
+    "epochs": 40,
+    "label_smoothing": 0.1,
+    "mixup_alpha": 0.2,
+    "gradient_clip": 1.0
+  },
+  "performance": {
+    "test_accuracy": 0.7944409847259521,
+    "best_model_path": "resnet50_best_advanced.keras"
+  },
+  "dataset": {
+    "classes": [
+      "1-20",
+      "21-50",
+      "51-100"
+    ]
+  },
+  "date": "2026-01-04 23:51:52"
+}

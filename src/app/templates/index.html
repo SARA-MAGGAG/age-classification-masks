@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification d'Âge en Temps Réel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="header">
+            <h1>● Classification d'Âge en Temps Réel</h1>
+            <p>Détection automatique: Jeunes (1-20), Adultes (21-50), Seniors (51-100)</p>
+        </div>
+        
+        <!-- Sélection du mode -->
+        <div class="mode-selection">
+            <button class="mode-btn active" onclick="switchMode('camera')">
+                <span class="status-indicator status-active"></span>
+                📹 Mode Caméra
+            </button>
+            <button class="mode-btn" onclick="switchMode('image')">
+                <span class="status-indicator status-inactive"></span>
+                📸 Mode Image
+            </button>
+        </div>
+        
+        <!-- Sélecteur de modèle -->
+        <div class="model-selector">
+            <div class="selector-title">
+                🤖 Sélection du Modèle
+            </div>
+            <div class="selector-row">
+                <select class="model-dropdown" id="modelSelect">
+                    <option value="">Chargement des modèles...</option>
+                </select>
+                <button class="load-btn" onclick="loadSelectedModel()">
+                    Charger le modèle
+                </button>
+            </div>
+            <div class="model-info">
+                <div class="model-detail">
+                    <span>Modèle actif:</span>
+                    <span id="currentModelName">Aucun</span>
+                </div>
+                <div class="model-detail">
+                    <span>Type:</span>
+                    <span id="currentModelType">-</span>
+                </div>
+                <div class="model-detail">
+                    <span>Architecture:</span>
+                    <span id="currentModelArchitecture">-</span>
+                </div>
+                <div id="modelStatusMessage" class="model-status-message" style="display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- Section Caméra -->
+        <div id="camera-section" class="content-section active">
+            <h2 class="section-title">📹 Caméra en Direct</h2>
+            
+            <div class="video-container">
+                <img id="videoFeed" src="/video_feed" alt="Flux vidéo en direct">
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-primary" onclick="startCamera()">
+                    <span class="status-indicator status-active"></span>▶ Démarrer
+                </button>
+                <button class="btn btn-danger" onclick="stopCamera()">⏹ Arrêter</button>
+                <button class="btn btn-success" onclick="refreshVideo()">🔄 Rafraîchir Flux</button>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="cameraFrames">0</div>
+                    <div class="stat-label">Frames</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="cameraFaces">0</div>
+                    <div class="stat-label">Visages détectés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="cameraRate">0%</div>
+                    <div class="stat-label">Taux détection</div>
+                </div>
+            </div>
+            
+            <h3 style="margin: 25px 0 15px 0; color: #555;">Répartition par plage d'âge</h3>
+            <div class="age-groups">
+                <div class="age-group young">
+                    <div>👶 Jeunes (1-20)</div>
+                    <div class="age-count" id="cameraYoung">0</div>
+                </div>
+                <div class="age-group adult">
+                    <div>🧑 Adultes (21-50)</div>
+                    <div class="age-count" id="cameraAdult">0</div>
+                </div>
+                <div class="age-group senior">
+                    <div>👵 Seniors (51-100)</div>
+                    <div class="age-count" id="cameraSenior">0</div>
+                </div>
+            </div>
+            
+            <div class="controls" style="margin-top: 25px;">
+                <button class="btn btn-primary" onclick="resetStats()">🔄 Réinitialiser stats</button>
+                <button class="btn btn-warning" onclick="exportStats()">📊 Exporter données</button>
+            </div>
+        </div>
+        
+        <!-- Section Image -->
+        <div id="image-section" class="content-section">
+            <h2 class="section-title">📸 Analyser une Image</h2>
+            
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <h4>📁 Choisir une image à analyser</h4>
+                <p>Cliquez ici ou glissez-déposez une image (JPG, PNG, JPEG)</p>
+                <div style="margin-top: 20px;">
+                    <span class="upload-btn">Parcourir les fichiers</span>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display:none">
+            </div>
+            
+            <div id="imagePreview"></div>
+            
+            <div id="textResults" class="text-results" style="display:none;">
+                <div id="detectionCount" class="detection-count"></div>
+                <div id="predictionsList" class="predictions-container"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

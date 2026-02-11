@@ -1,0 +1,23 @@
+{
+  "feature_type": "hog",
+  "img_size": [
+    128,
+    128
+  ],
+  "max_samples_per_class": {
+    "train": 1000,
+    "val": null,
+    "test": null
+  },
+  "use_pca": true,
+  "pca_components": 100,
+  "use_class_weight": true,
+  "best_params": {
+    "C": 1,
+    "gamma": "scale",
+    "kernel": "rbf"
+  },
+  "cv_score": 0.61,
+  "test_accuracy": 0.6079651524579963,
+  "timestamp": "2026-01-04 15:29:11"
+}

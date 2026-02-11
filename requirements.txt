@@ -1,0 +1,9 @@
+pandas
+plotly
+streamlit
+tensorflow
+albumentations
+torch
+flask
+imblearn
+tensorflow_addons

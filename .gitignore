@@ -1,0 +1,52 @@
+# Environnements virtuels
+venv/
+.Python
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Modèles entraînés
+*.pkl
+*.h5
+*.keras
+*.pt
+*.pth
+
+# Données et datasets
+data/
+dataset_augmente/
+data/images_organisees/
+dataset_augmente.zip
+logs/
+dataset_augmente/
+data/
+*.jpg
+*.png
+*.zip
+# Archives
+*.zip
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
+*.temp
+
+# Packaging Python
+*.egg
+*.egg-info/
+dist/
+build/
+data/ 
+*.zip 
+__pycache__/ 
+*.pyc 
+.ipynb_checkpoints/ 
