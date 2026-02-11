@@ -118,17 +118,14 @@ data/
 
 ### 📥 Comment obtenir les données ?
 
-**Option 1 : Télécharger depuis le lien**
-```
-🔗 Lien Google Drive : https://drive.google.com/drive/folders/1jq1UuRkLjtd_LzOJi2I8zGmSLs_CQQYs?usp=drive_link
-```
 
-**Option 2 : Contacter l'auteur**
+
+**Option 1 : Contacter l'auteur**
 ```
 📧 Email : saramaggag@gmail.com
 ```
 
-**Option 3 : Utiliser vos propres données**
+**Option 2 : Utiliser vos propres données**
 
 Organisez vos images selon la structure ci-dessus et placez-les dans le dossier `data/`
 
