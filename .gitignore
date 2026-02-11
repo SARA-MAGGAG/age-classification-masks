@@ -50,3 +50,17 @@ data/
 __pycache__/ 
 *.pyc 
 .ipynb_checkpoints/ 
+ 
+# Donnees volumineuses (images) 
+data/ 
+ 
+# Modeles entraines 
+*.h5 
+*.hdf5 
+*.pkl 
+*.pth 
+*.weights 
+ 
+# Fichiers volumineux 
+*.zip 
+models/real_vit_results.zip 
