@@ -120,12 +120,12 @@ data/
 
 **Option 1 : Télécharger depuis le lien**
 ```
-🔗 Lien Google Drive : [À AJOUTER]
+🔗 Lien Google Drive : https://drive.google.com/drive/folders/1jq1UuRkLjtd_LzOJi2I8zGmSLs_CQQYs?usp=drive_link
 ```
 
 **Option 2 : Contacter l'auteur**
 ```
-📧 Email : [votre-email]
+📧 Email : saramaggag@gmail.com
 ```
 
 **Option 3 : Utiliser vos propres données**
@@ -232,21 +232,16 @@ Les contributions sont les bienvenues ! Pour contribuer :
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
 
----
 
-## 📄 License
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
----
 
 ## 👥 Auteur
 
 **Sara MAGGAG**
 
 - 🔗 GitHub: [@SARA-MAGGAG](https://github.com/SARA-MAGGAG)
-- 📧 Email: [votre-email]
-- 💼 LinkedIn: [votre-profil]
+- 📧 Email: saramaggag@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/sara-maggag-a376661b7/
 
 ---
 
